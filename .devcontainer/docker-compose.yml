@@ -1,0 +1,17 @@
+version: "3.8"
+name: i360_monitor_backend_db
+services:
+  devfrontcontainer:
+    image: mcr.microsoft.com/devcontainers/typescript-node:1-18-bullseye
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity
+    environment:
+      HOST: 0.0.0.0   #another test without results
+    ports:
+      - 3333:3333
+      - 24678:24678  # not really sure 
+networks:
+  network1:
+    name: backend_db_default
+    external: true
